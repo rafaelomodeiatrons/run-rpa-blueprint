@@ -6,11 +6,11 @@ from typing import Any, Dict, List
 ENDPOINT = "http://localhost:3000/automations/blueprint-runner/activate"
 TENANT_ID = "0192d800-65a7-7f49-83aa-80739accb137"
 
-# Ajuste aqui (minutos)
-SLEEP_MINUTES = 3
+# Ajuste aqui (segundos)
+SLEEP_MINUTES = 40
 
 # Arquivo com os 671 itens (o que você gerou)
-JSON_FILE_PATH = "blueprints_enel_579_novo_fluxo_v2.json"
+JSON_FILE_PATH = "blueprints_belo_horizonte_mg_indice_2026-02-17.json"
 
 
 def load_items(path: str) -> List[Dict[str, Any]]:
@@ -82,7 +82,7 @@ def main() -> None:
             print(f"  !! Erro na requisição: {e}")
 
         if i < total:
-            time.sleep(SLEEP_MINUTES * 60)
+            time.sleep(SLEEP_MINUTES)
 
     print("\nFinalizado!")
 
