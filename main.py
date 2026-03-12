@@ -10,7 +10,7 @@ TENANT_ID = "0192d800-65a7-7f49-83aa-80739accb137"
 SLEEP_MINUTES = 0
 
 # Arquivo com os 671 itens (o que você gerou)
-JSON_FILE_PATH = "blueprints_belo_horizonte_mg_indice_2026-02-17.json"
+JSON_FILE_PATH = "blueprints_CND_belo_horizonte_com_todos_os_indice.json"
 
 
 def load_items(path: str) -> List[Dict[str, Any]]:
