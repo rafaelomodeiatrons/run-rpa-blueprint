@@ -1,0 +1,427 @@
+{
+    "id": "c1e0d8b5-7b67-4c49-b0e5-2b5e372b9670",
+    "ids": {
+        "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "camoufox",
+    "variables": [
+        {
+            "email": "rd.faturas.brcge@engie.com",
+            "senha": "Raia12345*",
+            "indice": "0085978213"
+        }
+    ],
+    "steps": [
+        {
+            "id": "d0c7e77e-ab28-49ce-a7b1-e6c690023cac",
+            "action": "condition",
+            "name": "Validar variáveis obrigatórias (email, senha, indice)",
+            "conditions": [
+                {
+                    "variable_name": "email",
+                    "operator": "not_equals",
+                    "compare_value": ""
+                },
+                {
+                    "variable_name": "senha",
+                    "operator": "not_equals",
+                    "compare_value": ""
+                },
+                {
+                    "variable_name": "indice",
+                    "operator": "not_equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "03c2c629-dc0f-42a2-b93e-063fc53f6892",
+            "false_next_id": "7ca9fe5d-a3c6-4d9f-a1a4-8c44977003c7"
+        },
+        {
+            "id": "7ca9fe5d-a3c6-4d9f-a1a4-8c44977003c7",
+            "action": "log",
+            "type": "error",
+            "value": "Variáveis obrigatórias ausentes: email, senha e/ou indice.",
+            "next_id": "N/A"
+        },
+        {
+            "id": "03c2c629-dc0f-42a2-b93e-063fc53f6892",
+            "action": "navigate",
+            "value": "https://portalhome.eneldistribuicaosp.com.br/#/corporativo",
+            "next_id": "3dbcaf4c-56a7-45d0-b325-53f48db4c63e"
+        },
+        {
+            "id": "3dbcaf4c-56a7-45d0-b325-53f48db4c63e",
+            "action": "waitForSelector",
+            "name": "Aguardar campo de e-mail",
+            "selector": "#email",
+            "next_id": "df53f819-53b9-4cc9-9709-a40f08cf6702"
+        },
+        {
+            "id": "df53f819-53b9-4cc9-9709-a40f08cf6702",
+            "action": "setVariable",
+            "name": "Checar se existe md-dialog interceptando cliques",
+            "variable_name": "loginDialog",
+            "selector": ".md-dialog-container md-dialog",
+            "next_id": "eb353d52-e796-48a5-a3fb-49e5d6a371bc"
+        },
+        {
+            "id": "eb353d52-e796-48a5-a3fb-49e5d6a371bc",
+            "action": "condition",
+            "name": "Existe modal/dialog aberto?",
+            "conditions": [
+                {
+                    "variable_name": "loginDialog",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "true_next_id": "2739cea3-f946-4470-b3f7-218139d31c0f",
+            "false_next_id": "b55d62b0-919c-42ef-ac44-c446d7975319"
+        },
+        {
+            "id": "b55d62b0-919c-42ef-ac44-c446d7975319",
+            "action": "click",
+            "name": "Fechar modal/dialog (genérico)",
+            "selector": ".md-dialog-container md-dialog button, .md-dialog-container md-dialog .md-button",
+            "next_id": "0bcdcd1e-3a4d-4115-9f83-e2bd20a9d4fa"
+        },
+        {
+            "id": "0bcdcd1e-3a4d-4115-9f83-e2bd20a9d4fa",
+            "action": "waitForTimeout",
+            "name": "Aguardar 1s após fechar modal",
+            "value": "1000",
+            "next_id": "2739cea3-f946-4470-b3f7-218139d31c0f"
+        },
+        {
+            "id": "2739cea3-f946-4470-b3f7-218139d31c0f",
+            "action": "type",
+            "name": "Preencher e-mail",
+            "selector": "#email",
+            "value": "{{email}}",
+            "next_id": "0d7e3804-eee0-4938-8117-1ee748677ced"
+        },
+        {
+            "id": "0d7e3804-eee0-4938-8117-1ee748677ced",
+            "action": "type",
+            "name": "Preencher senha",
+            "selector": "#senha",
+            "value": "{{senha}}",
+            "next_id": "17e61fa9-36c1-4510-b32e-f8da467cf913"
+        },
+        {
+            "id": "17e61fa9-36c1-4510-b32e-f8da467cf913",
+            "action": "click",
+            "name": "Clicar em Entrar",
+            "selector": "#btnLoginEmail",
+            "next_id": "39052b95-f5a2-4256-8c55-58c92add134c"
+        },
+        {
+            "id": "39052b95-f5a2-4256-8c55-58c92add134c",
+            "action": "setVariable",
+            "name": "Capturar estado do loading após login",
+            "variable_name": "progressModalState",
+            "selector": "#progress-modal",
+            "next_id": "1eb0587c-7c2c-46aa-b94b-dadc08e9c7f2"
+        },
+        {
+            "id": "1eb0587c-7c2c-46aa-b94b-dadc08e9c7f2",
+            "action": "condition",
+            "name": "Loading finalizou? (login)",
+            "conditions": [
+                {
+                    "variable_name": "progressModalState",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "515ffc84-70c8-480e-96a9-71b038f87e20",
+            "false_next_id": "0bed8ce7-58b6-493f-8bf3-7ac18408b6b8"
+        },
+        {
+            "id": "0bed8ce7-58b6-493f-8bf3-7ac18408b6b8",
+            "action": "waitForTimeout",
+            "name": "Aguardar 1s e revalidar loading (login)",
+            "value": "1000",
+            "next_id": "39052b95-f5a2-4256-8c55-58c92add134c"
+        },
+        {
+            "id": "515ffc84-70c8-480e-96a9-71b038f87e20",
+            "action": "waitForSelector",
+            "name": "Aguardar tela de seleção de CNPJ",
+            "selector": ".inner_container",
+            "next_id": "d4d3314d-4c02-493b-bc77-392d09e65492"
+        },
+        {
+            "id": "d4d3314d-4c02-493b-bc77-392d09e65492",
+            "action": "click",
+            "name": "Selecionar primeiro radio de CNPJ",
+            "selector": ".desktop_table md-radio-button .md-container, md-radio-button .md-container",
+            "next_id": "5e8ccd4a-109a-4783-9594-953fb946f689"
+        },
+        {
+            "id": "5e8ccd4a-109a-4783-9594-953fb946f689",
+            "action": "click",
+            "name": "Clicar SEGUINTE >>",
+            "selector": "button.aes-button.stretch[ng-click*='selectCnpj']",
+            "next_id": "74484147-2ff8-438f-8ef5-c9a0f1450e4d"
+        },
+        {
+            "id": "74484147-2ff8-438f-8ef5-c9a0f1450e4d",
+            "action": "setVariable",
+            "name": "Capturar estado do loading após SEGUINTE",
+            "variable_name": "progressModalStateAfterCnpj",
+            "selector": "#progress-modal",
+            "next_id": "9d415a85-ba9a-4912-b08c-662653a425d2"
+        },
+        {
+            "id": "9d415a85-ba9a-4912-b08c-662653a425d2",
+            "action": "condition",
+            "name": "Loading finalizou? (pós-SEGUINTE)",
+            "conditions": [
+                {
+                    "variable_name": "progressModalStateAfterCnpj",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "9f4fc9e5-23c1-4751-b0e5-dea3e158589b",
+            "false_next_id": "58947b5e-1950-417d-b88f-1b6364442a07"
+        },
+        {
+            "id": "58947b5e-1950-417d-b88f-1b6364442a07",
+            "action": "waitForTimeout",
+            "name": "Aguardar 1s e revalidar loading (pós-SEGUINTE)",
+            "value": "1000",
+            "next_id": "74484147-2ff8-438f-8ef5-c9a0f1450e4d"
+        },
+        {
+            "id": "9f4fc9e5-23c1-4751-b0e5-dea3e158589b",
+            "action": "waitForSelector",
+            "name": "Aguardar tela de seleção de INSTALAÇÃO",
+            "selector": "input[placeholder='Instalação']",
+            "next_id": "45729ddf-d9be-4f75-857f-226017f369d4"
+        },
+        {
+            "id": "45729ddf-d9be-4f75-857f-226017f369d4",
+            "action": "type",
+            "name": "Preencher filtro por Instalação com indice",
+            "selector": "input[placeholder='Instalação']",
+            "value": "{{indice}}",
+            "next_id": "f0f552d7-eaa9-4807-9330-0534704ddd17"
+        },
+        {
+            "id": "f0f552d7-eaa9-4807-9330-0534704ddd17",
+            "action": "waitForTimeout",
+            "name": "Aguardar atualização da tabela após filtro",
+            "value": "2200",
+            "next_id": "a2558937-9089-4d17-89bf-f6c05ec91542"
+        },
+        {
+            "id": "a2558937-9089-4d17-89bf-f6c05ec91542",
+            "action": "click",
+            "name": "Selecionar radio da instalação filtrada",
+            "selector": ".desktop_table md-radio-button .md-container, md-radio-button .md-container",
+            "next_id": "e61933eb-e9a9-4dd4-8fab-1af92296a749"
+        },
+        {
+            "id": "e61933eb-e9a9-4dd4-8fab-1af92296a749",
+            "action": "click",
+            "name": "Clicar no botão Entrar (instalação)",
+            "selector": "button.aes-button.stretch[ng-click*='selectInstalation']",
+            "next_id": "3467aeb0-18bc-4b41-bb60-8423c54423cd"
+        },
+        {
+            "id": "3467aeb0-18bc-4b41-bb60-8423c54423cd",
+            "action": "setVariable",
+            "name": "Capturar estado do loading após Entrar na instalação",
+            "variable_name": "progressModalStateAfterInstall",
+            "selector": "#progress-modal",
+            "next_id": "e7ebd1a8-9fc5-4780-9eea-6257e81c078d"
+        },
+        {
+            "id": "e7ebd1a8-9fc5-4780-9eea-6257e81c078d",
+            "action": "condition",
+            "name": "Loading finalizou? (pós-Entrar instalação)",
+            "conditions": [
+                {
+                    "variable_name": "progressModalStateAfterInstall",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "970fddf1-ab8f-45ee-b8a9-859c53696ea1",
+            "false_next_id": "9adcaf3d-7952-4c22-9fc8-0c76d32b0d07"
+        },
+        {
+            "id": "9adcaf3d-7952-4c22-9fc8-0c76d32b0d07",
+            "action": "waitForTimeout",
+            "name": "Aguardar 1s e revalidar loading (pós-Entrar instalação)",
+            "value": "1000",
+            "next_id": "3467aeb0-18bc-4b41-bb60-8423c54423cd"
+        },
+        {
+            "id": "970fddf1-ab8f-45ee-b8a9-859c53696ea1",
+            "action": "waitForSelector",
+            "name": "Aguardar card Conta Atual",
+            "selector": "md-card.card-conta-atual",
+            "next_id": "2f6b7f43-84b2-4f6a-9e55-6b0e1a4e7b17"
+        },
+        {
+            "id": "2f6b7f43-84b2-4f6a-9e55-6b0e1a4e7b17",
+            "action": "setVariable",
+            "name": "Capturar mês/ano de referência (texto do card)",
+            "variable_name": "mesReferenciaRaw",
+            "selector": "md-card.card-conta-atual label[translate='@APP-PORTAL-CARD-CONTA-ATUAL-VENCIMENTO-REFERENTE']",
+            "next_id": "6c2a1f8b-8b3e-4bb1-9a8f-2cf47e5f2d8a"
+        },
+        {
+            "id": "6c2a1f8b-8b3e-4bb1-9a8f-2cf47e5f2d8a",
+            "action": "setVariable",
+            "name": "Capturar vencimento (texto do card)",
+            "variable_name": "vencimentoRaw",
+            "selector": "md-card.card-conta-atual label[translate='@APP-PORTAL-CARD-CONTA-ATUAL-VENCIMENTO-VALOR']",
+            "next_id": "6e3d4aa8-9c9b-4a5f-9c6f-1ad2a70a0a62"
+        },
+        {
+            "id": "6e3d4aa8-9c9b-4a5f-9c6f-1ad2a70a0a62",
+            "action": "log",
+            "type": "info",
+            "value": "Referência capturada: {{mesReferenciaRaw}} | Vencimento capturado: {{vencimentoRaw}}",
+            "next_id": "2b7e1e0b-4f0e-4a0c-8cdd-6e9a4a5a8f1f"
+        },
+        {
+            "id": "2b7e1e0b-4f0e-4a0c-8cdd-6e9a4a5a8f1f",
+            "action": "formatDate",
+            "name": "Formatar mês/ano de referência (mmyyyy)",
+            "variable_name": "mesReferenciaFmt",
+            "value": "{{mesReferenciaRaw}}|mmyyyy",
+            "next_id": "6a1b4f2c-2c2d-4d58-bd5c-9ff8b2a4c7e1"
+        },
+        {
+            "id": "6a1b4f2c-2c2d-4d58-bd5c-9ff8b2a4c7e1",
+            "action": "formatDate",
+            "name": "Formatar vencimento (ddmmyyyy)",
+            "variable_name": "vencimentoFmt",
+            "value": "{{vencimentoRaw}}|ddmmyyyy",
+            "next_id": "6e3d4aa8-9c9b-4a5f-9c6f-1ad2a70a0a63"
+        },
+        {
+            "id": "6e3d4aa8-9c9b-4a5f-9c6f-1ad2a70a0a63",
+            "action": "log",
+            "type": "info",
+            "value": "Referência capturada: {{mesReferenciaFmt}} | Vencimento capturado: {{vencimentoFmt}}",
+            "next_id": "64a5d9c9-8c0b-46c9-8f68-2d6e4bc8a9a9"
+        },
+        {
+            "id": "64a5d9c9-8c0b-46c9-8f68-2d6e4bc8a9a9",
+            "action": "setVariable",
+            "name": "Capturar situação da conta atual (ex.: Paga / Em aberto)",
+            "variable_name": "situacaoContaAtual",
+            "selector": "md-card.card-conta-atual span.md-card-content-align[ng-bind*='situacao'], span.md-card-content-align[ng-bind=\"$ctrl.portal.contaAtual.situacao\"]",
+            "next_id": "e88e4a4b-3d94-43d4-9e7e-4d6f4b5b9b90"
+        },
+        {
+            "id": "e88e4a4b-3d94-43d4-9e7e-4d6f4b5b9b90",
+            "action": "condition",
+            "name": "Conta atual está PAGA? (situacaoContaAtual == 'Paga')",
+            "conditions": [
+                {
+                    "variable_name": "situacaoContaAtual",
+                    "operator": "contains",
+                    "compare_value": "Paga"
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "f6b9a0d5-f3a2-4ef7-9c86-cb48c5c8c0f1",
+            "false_next_id": "82fc42db-766a-4027-bba0-384ac657b6ac"
+        },
+        {
+            "id": "f6b9a0d5-f3a2-4ef7-9c86-cb48c5c8c0f1",
+            "action": "waitForDownload",
+            "name": "Preparar captura de download do PDF (fatura Paga - direto no card)",
+            "next_id": "2a4a9d2e-1eaf-4c6f-8d58-7b88f3c0c5d7"
+        },
+        {
+            "id": "2a4a9d2e-1eaf-4c6f-8d58-7b88f3c0c5d7",
+            "action": "click",
+            "name": "Clicar no botão de download direto (fatura Paga)",
+            "selector": "button[ng-click=\"$ctrl.pagamentoModal()\"]",
+            "next_id": "5f2fbd03-3c24-4df2-bf0a-0f8b2b1ac0e0"
+        },
+        {
+            "id": "5f2fbd03-3c24-4df2-bf0a-0f8b2b1ac0e0",
+            "action": "downloadPdf",
+            "name": "Salvar PDF baixado (fatura Paga)",
+            "value": "/tmp/enel_sp/{{indice}}_{{mesReferenciaFmt}}_{{vencimentoFmt}}_paga",
+            "next_id": "N/A"
+        },
+        {
+            "id": "82fc42db-766a-4027-bba0-384ac657b6ac",
+            "action": "click",
+            "name": "Clicar em Baixar conta (Conta Atual) - abre detalhamento/modal",
+            "selector": "md-card.card-conta-atual button[ng-click*='pagamentoModal']",
+            "next_id": "9adcaf3d-7952-4c22-9fc8-0c76d32b0d08"
+        },
+        {
+            "id": "9adcaf3d-7952-4c22-9fc8-0c76d32b0d08",
+            "action": "setVariable",
+            "name": "Checar loading antes de clicar em Baixar conta (detalhamento)",
+            "variable_name": "progressModalBeforeDownload",
+            "selector": "#progress-modal",
+            "next_id": "7e4a2a37-8d2e-4b75-9c33-9a7a1a3f5d0b"
+        },
+        {
+            "id": "7e4a2a37-8d2e-4b75-9c33-9a7a1a3f5d0b",
+            "action": "condition",
+            "name": "Loading finalizou? (antes de Baixar conta)",
+            "conditions": [
+                {
+                    "variable_name": "progressModalBeforeDownload",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "c8d6b2f9-2c4e-4d54-9c2b-7a67b0b7e1f4",
+            "false_next_id": "a7b4d3d2-0f4c-4bd7-b1f6-7c2f7a9a8b12"
+        },
+        {
+            "id": "a7b4d3d2-0f4c-4bd7-b1f6-7c2f7a9a8b12",
+            "action": "waitForTimeout",
+            "name": "Aguardar 800ms e revalidar loading (antes de Baixar conta)",
+            "value": "800",
+            "next_id": "9adcaf3d-7952-4c22-9fc8-0c76d32b0d08"
+        },
+        {
+            "id": "c8d6b2f9-2c4e-4d54-9c2b-7a67b0b7e1f4",
+            "action": "waitForSelector",
+            "name": "Aguardar botão Baixar conta (detalhamento de conta)",
+            "selector": "md-card#detalhamento button[ng-click='detalhamentoC.gerarPdf(detalhamentoC.segundaVia.conta)']",
+            "next_id": "f8b39349-3042-4fb8-bccf-aa0b553221a0"
+        },
+        {
+            "id": "f8b39349-3042-4fb8-bccf-aa0b553221a0",
+            "action": "waitForDownload",
+            "name": "Preparar captura de download do PDF (Baixar conta)",
+            "next_id": "6c8f2f7e-3c3e-4e6b-9b8a-4b6d4f9c1e21"
+        },
+        {
+            "id": "6c8f2f7e-3c3e-4e6b-9b8a-4b6d4f9c1e21",
+            "name": "Clique no botão Baixar conta (detalhamento)",
+            "action": "click",
+            "selector": "md-card#detalhamento button[ng-click='detalhamentoC.gerarPdf(detalhamentoC.segundaVia.conta)']",
+            "next_id": "bde7bf06-7997-4e70-b4c2-c54821ae0c69"
+        },
+        {
+            "id": "bde7bf06-7997-4e70-b4c2-c54821ae0c69",
+            "action": "downloadPdf",
+            "value": "/tmp/enel_sp/{{indice}}_{{mesReferenciaFmt}}_{{vencimentoFmt}}",
+            "next_id": "N/A"
+        }
+    ]
+}

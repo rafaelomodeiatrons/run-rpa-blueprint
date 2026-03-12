@@ -1,0 +1,4314 @@
+[
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3000556",
+        "indice": "8893"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3000557",
+        "indice": "1720996"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3000558",
+        "indice": "0350974"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3000564",
+        "indice": "000001481"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001124",
+        "indice": "2395827"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001127",
+        "indice": "1949845"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001128",
+        "indice": "0153524"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001317",
+        "indice": "9039767"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001319",
+        "indice": "1384740"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001385",
+        "indice": "1575848"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001440",
+        "indice": "9203036"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001521",
+        "indice": "0173177"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001533",
+        "indice": "9290958"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001533",
+        "indice": "0004758"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001547",
+        "indice": "1526960"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001583",
+        "indice": "1842242"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001610",
+        "indice": "562629"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001757",
+        "indice": "2498413"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001758",
+        "indice": "2508532"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001825",
+        "indice": "0670294"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001837",
+        "indice": "4803779"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001893",
+        "indice": "22918"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001909",
+        "indice": "2396211"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001939",
+        "indice": "1816500"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001939",
+        "indice": "4145437"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001941",
+        "indice": "1733729"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001958",
+        "indice": "1070002"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3001977",
+        "indice": "1367188"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002006",
+        "indice": "513113"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002013",
+        "indice": "1721003"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002075",
+        "indice": "1645463"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002169",
+        "indice": "4086465"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002176",
+        "indice": "9389512"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002187",
+        "indice": "9407715"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002203",
+        "indice": "2123738"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002214",
+        "indice": "5789990"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002272",
+        "indice": "1835424"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3002896",
+        "indice": "1243608"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003007",
+        "indice": "652148"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003222",
+        "indice": "9039775"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003310",
+        "indice": "9856579"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003368",
+        "indice": "1235052"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003414",
+        "indice": "323780"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003831",
+        "indice": "9898271"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3003845",
+        "indice": "1512846"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004066",
+        "indice": "2146754"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004192",
+        "indice": "1634763"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004265",
+        "indice": "4093577"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004265",
+        "indice": "4093585"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004265",
+        "indice": "4093569"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004514",
+        "indice": "2392593"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004525",
+        "indice": "2059576"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004556",
+        "indice": "4080661"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004551",
+        "indice": "6631509"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004555",
+        "indice": "83410"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  },
+  {
+    "id": "6b7c7f18-8f8d-4f50-8d9a-28df0cbe9c79",
+    "ids": {
+      "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
+    },
+    "retryCount": 1,
+    "browserType": "chromium",
+    "variables": [
+      {
+        "contrato": "3004555",
+        "indice": "0083348"
+      }
+    ],
+    "steps": [
+      {
+        "id": "c9f58e7e-3f7c-46f9-9b37-9f2cb0e2282b",
+        "action": "condition",
+        "name": "Check indice",
+        "conditions": [
+          {
+            "variable_name": "indice",
+            "operator": "not_equals",
+            "compare_value": ""
+          }
+        ],
+        "logical_operator": "and",
+        "true_next_id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "false_next_id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f"
+      },
+      {
+        "id": "0c637f97-2de8-4a2b-9a8a-d6f1d4f2fc0f",
+        "action": "log",
+        "value": "Skipping variable set due to missing indice",
+        "next_id": "N/A"
+      },
+      {
+        "id": "e65c1c14-0f3c-4d08-9ee1-53db44d0f8d7",
+        "action": "navigate",
+        "value": "https://www2.sefaz.salvador.ba.gov.br/servico/certidao-negativa-debito",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a91e"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a91e",
+        "action": "type",
+        "selector": "iframe .PS_label + input",
+        "value": "{{indice}}",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a96f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a96f",
+        "action": "click",
+        "selector": "iframe input.submitConsultar",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97f"
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97f",
+        "action": "waitForTimeout",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "value": "5000",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a97e",
+        "action": "waitForSelector",
+        "selector": ".PS_areaaForm",
+        "next_id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "page": -1
+      },
+      {
+        "id": "019ae5b6-3389-758d-9da3-364f5944a970",
+        "action": "pdf",
+        "value": "/tmp/cnds_salvador/cnd_{{contrato}}_{{indice}}_salvador_ba_16022026",
+        "next_id": "N/A",
+        "page": -1
+      }
+    ]
+  }
+]
