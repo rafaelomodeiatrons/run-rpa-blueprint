@@ -1,140 +1,94 @@
 import json
 import copy
 
-INDICES = [
-    "14070041600400",
-    "11090028400010000",
-    "11090028400250000",
-    "11090028400260000",
-    "110900326000101",
-    "110900326000102",
-    "1502005803019100007",
-    "10110700850003",
-    "10209302470019",
-    "10503501700002",
-    "10906000250004",
-    "11005302330000",
-    "11017400020010",
-    "11040006400130000",
-    "11040006400140000",
-    "11040008000140000",
-    "11040008000150",
-    "11060002200180000",
-    "11070020900010000",
-    "11111101780000",
-    "11140029900020",
-    "11140029900030",
-    "11160016000150000",
-    "11160016000160000",
-    "11608001840002",
-    "13070033400140000",
-    "14070004000260000",
-    "14070004000270000",
-    "20215902980019",
-    "20104502530000",
-    "20107103540009",
-    "20102204440003",
-    "20208001040002",
-    "20305900110008",
-    "20503103690003",
-    "21600100190009",
-    "23204700580000",
-    "23210103410004",
-    "30101402050000",
-    "30104700110014",
-    "30103603040013",
-    "30103603040021",
-    "30103603040030",
-    "30112202780000",
-    "30205602630000",
-    "30305804320000",
-    "30305804520015",
-    "30309802190005",
-    "30311304450002",
-    "30311304660007",
-    "30300802780000",
-    "30404401940004",
-    "30404402070003",
-    "30405304211100",
-    "30400403610936",
-    "30400403618174",
-    "30400403618175",
-    "30400501690000",
-    "30404401360016",
-    "30513502420000",
-    "30610300180083",
-    "30610300180091",
-    "30610300180105",
-    "30610300180075",
-    "30805200250012",
-    "30805200250020",
-    "30805200250039",
-    "30803002440008",
-    "30803002780003",
-    "30902802560018",
-    "30902802560026",
-    "31008301820010",
-    "31203801630002",
-    "31208003680493",
-    "31203800250001",
-    "31300102260009",
-    "31509203740008",
-    "31507001960011",
-    "31507001960020",
-    "31804103400007",
-    "31908603180003",
-    "32002505450005",
-    "32002505860009",
-    "32302302340003",
-    "32302302750007",
-    "32401201660053",
-    "32600502520007",
-    "32600502660003",
-    "32708800760008",
-    "32910301770020",
-    "32910301570005",
-    "32910301670018",
-    "32910301770012",
-    "33200102770000",
-    "33200103200010",
-    "33414702060006",
-    "33414702180001",
-    "34002611250004",
-    "34002611370000",
-    "34002611130009",
-    "38206204510000",
-    "38206204670000",
-    "38206204790000",
-    "38300205220000",
-    "40108600200028",
-    "40306400090003",
-    "40306404250013",
-    "40618800730003",
-    "40618800750000",
-    "40618800860004",
-    "40710202670016",
-    "40804303410000",
-    "41008403060000",
-    "41405100250019",
-    "41405100250043",
-    "43300805300000",
-    "43901802930004",
-    "45701703510000",
-    "46801301840001",
-    "517700",
-    "54286",
+TEMPLATE_FILE = "blueprint_template.json"
+OUTPUT_FILE = "cnd_bh_57.json"
+
+REGISTROS = [
+    {"indice": "100137401", "cpfOuCnpjOuEndereco": "9605511000101"},
+    {"indice": "100170705", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "100170706", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "100172256", "cpfOuCnpjOuEndereco": "34291319000135"},
+    {"indice": "2470446", "cpfOuCnpjOuEndereco": "12093990000139"},
+    {"indice": "196797", "cpfOuCnpjOuEndereco": "7737816000141"},
+    {"indice": "196800", "cpfOuCnpjOuEndereco": "7737816000141"},
+    {"indice": "1973185", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "1973193", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "1973207", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "1973215", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "1973223", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "2072157", "cpfOuCnpjOuEndereco": "391"},
+    {"indice": "2082764", "cpfOuCnpjOuEndereco": "644"},
+    {"indice": "208868", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "208876", "cpfOuCnpjOuEndereco": "6541273000120"},
+    {"indice": "233137", "cpfOuCnpjOuEndereco": "332"},
+    {"indice": "251895", "cpfOuCnpjOuEndereco": "1345"},
+    {"indice": "251909", "cpfOuCnpjOuEndereco": "61139718053"},
+    {"indice": "2555980", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "2555999", "cpfOuCnpjOuEndereco": "6710"},
+    {"indice": "2556006", "cpfOuCnpjOuEndereco": "6706"},
+    {"indice": "2556014", "cpfOuCnpjOuEndereco": "6698"},
+    {"indice": "2556022", "cpfOuCnpjOuEndereco": "27"},
+    {"indice": "2556030", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "2556049", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "2556057", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "2556065", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "2556073", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "2556081", "cpfOuCnpjOuEndereco": "23"},
+    {"indice": "256552", "cpfOuCnpjOuEndereco": "358"},
+    {"indice": "260800", "cpfOuCnpjOuEndereco": "5012206000155"},
+    {"indice": "2790769", "cpfOuCnpjOuEndereco": "41924940000"},
+    {"indice": "3533050", "cpfOuCnpjOuEndereco": "31662030010"},
+    {"indice": "472395", "cpfOuCnpjOuEndereco": "1335"},
+    {"indice": "51020", "cpfOuCnpjOuEndereco": "18369508000127"},
+    {"indice": "570001", "cpfOuCnpjOuEndereco": "88916549000171"},
+    {"indice": "640417", "cpfOuCnpjOuEndereco": "2614"},
+    {"indice": "640425", "cpfOuCnpjOuEndereco": "05674930082"},
+    {"indice": "6650015", "cpfOuCnpjOuEndereco": "11457194000175"},
+    {"indice": "6868800", "cpfOuCnpjOuEndereco": "401"},
+    {"indice": "780847", "cpfOuCnpjOuEndereco": "92691765000133"},
+    {"indice": "79162", "cpfOuCnpjOuEndereco": "1195"},
+    {"indice": "79170", "cpfOuCnpjOuEndereco": "1195"},
+    {"indice": "8811741", "cpfOuCnpjOuEndereco": "22627792000161"},
+    {"indice": "9029281", "cpfOuCnpjOuEndereco": "4167"},
+    {"indice": "9029303", "cpfOuCnpjOuEndereco": "4167"},
 ]
 
-with open("blueprint_template.json", "r", encoding="utf-8") as f:
+
+def normalize_registro(registro):
+    if isinstance(registro, dict):
+        return {
+            chave: "" if valor is None else str(valor)
+            for chave, valor in registro.items()
+        }
+
+    return {"indice": "" if registro is None else str(registro)}
+
+
+def ensure_variables_dict(blueprint):
+    variables = blueprint.get("variables")
+
+    if not isinstance(variables, list) or not variables:
+        blueprint["variables"] = [{}]
+        return blueprint["variables"][0]
+
+    if not isinstance(variables[0], dict):
+        blueprint["variables"][0] = {}
+
+    return blueprint["variables"][0]
+
+
+with open(TEMPLATE_FILE, "r", encoding="utf-8") as f:
     template = json.load(f)
 
 blueprints = []
-for idx in INDICES:
+for registro in REGISTROS:
     bp = copy.deepcopy(template)
-    bp["variables"][0]["indice"] = str(idx)
+    variables = ensure_variables_dict(bp)
+    variables.update(normalize_registro(registro))
     blueprints.append(bp)
 
-with open("cnd_bh_57.json", "w", encoding="utf-8") as f:
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(blueprints, f, ensure_ascii=False, indent=2)
 
-print("OK -> cpfl_blueprints_126.json gerado com", len(blueprints), "itens")
+print(f"OK -> {OUTPUT_FILE} gerado com {len(blueprints)} itens")
