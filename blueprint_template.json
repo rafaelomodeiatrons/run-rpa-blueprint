@@ -1,25 +1,27 @@
 {
-    "id": "d89dc5ad-dc5f-4f99-9075-856bd52b52c5",
+    "id": "454cb737-3e94-460a-b1ec-bb2999612fb8",
     "ids": {
         "tenantId": "0192d800-65a7-7f49-83aa-80739accb137"
     },
-    "retryCount": 1,
+    "retryCount": 2,
     "browserType": "camoufox",
     "variables": [
         {
-            "email": "clientes@gdsun.com.br",
-            "senha": "Rd@20231",
-            "indice": "3074026194"
+            "usuario": "GRUPOFANTINATI",
+            "senha": "RAIADROGASIL1234",
+            "cnpj": "61585865023526",
+            "cnpj_formatado": "61.585.865/0235-26",
+            "unidade_consumidora": "3000068541"
         }
     ],
     "steps": [
         {
-            "id": "9ffceacc-7b4a-4c5c-9c7c-9b7b4b6f8a86",
+            "id": "c50fbd8b-7460-4ed5-9a45-c98be9e906ed",
             "action": "condition",
-            "name": "Validar variáveis obrigatórias (email, senha, indice)",
+            "name": "Validar variáveis obrigatórias (usuario, senha, cnpj_formatado)",
             "conditions": [
                 {
-                    "variable_name": "email",
+                    "variable_name": "usuario",
                     "operator": "not_equals",
                     "compare_value": ""
                 },
@@ -29,528 +31,543 @@
                     "compare_value": ""
                 },
                 {
-                    "variable_name": "indice",
+                    "variable_name": "cnpj_formatado",
                     "operator": "not_equals",
                     "compare_value": ""
                 }
             ],
             "logical_operator": "and",
-            "true_next_id": "c9e5e0cc-09be-4b0e-86d7-1a5d4c0db2e4",
-            "false_next_id": "2f1d56af-8044-4f69-bf4c-1e3b8b57a3b1"
+            "true_next_id": "6d4f33d2-bce8-4da7-b419-e25ac1fbea43",
+            "false_next_id": "cf0d387d-99ae-471d-a237-2557b0dcc7a8"
         },
         {
-            "id": "2f1d56af-8044-4f69-bf4c-1e3b8b57a3b1",
+            "id": "cf0d387d-99ae-471d-a237-2557b0dcc7a8",
             "action": "log",
             "type": "error",
-            "value": "Variáveis obrigatórias ausentes: email e/ou senha e/ou indice.",
+            "value": "Variáveis obrigatórias ausentes: usuario e/ou senha e/ou cnpj_formatado.",
             "next_id": "N/A"
         },
         {
-            "id": "c9e5e0cc-09be-4b0e-86d7-1a5d4c0db2e4",
+            "id": "6d4f33d2-bce8-4da7-b419-e25ac1fbea43",
             "action": "navigate",
-            "name": "Abrir página de login CPFL (B2C)",
-            "value": "https://cpflb2cprd.b2clogin.com/cpflb2cprd.onmicrosoft.com/b2c_1a_signup_signin_mfa_front/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN_MFA_FRONT&client_id=17d5831d-6741-4670-8085-d1d34e37aec1&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fwww.cpfl.com.br%2Fb2c-auth%2Freceive-token&scope=17d5831d-6741-4670-8085-d1d34e37aec1%20offline_access&response_type=code&prompt=login&response_mode=query",
-            "next_id": "7f9f4c6c-3b9c-4873-9c18-bbc780c2a1e0"
+            "name": "Abrir Atende CEMIG (Home/Login)",
+            "value": "https://atende.cemig.com.br/Home",
+            "next_id": "46136ef6-3615-4df9-bafd-c4c1f80f7d19"
         },
         {
-            "id": "7f9f4c6c-3b9c-4873-9c18-bbc780c2a1e0",
+            "id": "46136ef6-3615-4df9-bafd-c4c1f80f7d19",
             "action": "waitForSelector",
-            "name": "Aguardar campo de e-mail",
-            "selector": "#signInName",
-            "next_id": "4c21a7f7-1f8c-4b94-8c2a-676f75b0c15c"
+            "name": "Aguardar DOM inicial (body)",
+            "selector": "body",
+            "next_id": "7fe6edf7-d492-455c-8522-a560cbae5b27"
         },
         {
-            "id": "4c21a7f7-1f8c-4b94-8c2a-676f75b0c15c",
-            "action": "type",
-            "name": "Preencher e-mail",
-            "selector": "#signInName",
-            "value": "{{email}}",
-            "next_id": "1ed3e192-f7b5-4df8-9a83-9b9c8a5d8cc2"
-        },
-        {
-            "id": "1ed3e192-f7b5-4df8-9a83-9b9c8a5d8cc2",
-            "action": "type",
-            "name": "Preencher senha",
-            "selector": "#password",
-            "value": "{{senha}}",
-            "next_id": "0fce0b63-3769-4d8f-9e3c-fc2f7c0bfa13"
-        },
-        {
-            "id": "0fce0b63-3769-4d8f-9e3c-fc2f7c0bfa13",
-            "action": "click",
-            "name": "Clicar em Entrar",
-            "selector": "#next",
-            "next_id": "3a8a3b2d-2b3c-4af2-9f4b-9f487b9c1f2b"
-        },
-        {
-            "id": "3a8a3b2d-2b3c-4af2-9f4b-9f487b9c1f2b",
+            "id": "7fe6edf7-d492-455c-8522-a560cbae5b27",
             "action": "setVariable",
-            "name": "Capturar estado do loader (outerHTML) após abrir 'Débito e segunda via'",
-            "variable_name": "loaderHtml",
-            "selector": ".cpfl-wrapper .loader",
-            "variable_property": "outerHTML",
-            "next_id": "b3c1a6c2-6c6c-4c39-8d7b-5e9d1a7a7c11"
+            "name": "Checar se banner OneTrust existe",
+            "variable_name": "oneTrustBanner",
+            "selector": "#onetrust-banner-sdk",
+            "next_id": "b8b60cda-f239-46e8-97ce-92a1b9f720ad"
         },
         {
-            "id": "b3c1a6c2-6c6c-4c39-8d7b-5e9d1a7a7c11",
+            "id": "b8b60cda-f239-46e8-97ce-92a1b9f720ad",
             "action": "condition",
-            "name": "Loading finalizou? (loader inexistente OU display none)",
+            "name": "Banner OneTrust está presente?",
             "conditions": [
                 {
-                    "variable_name": "loaderHtml",
+                    "variable_name": "oneTrustBanner",
                     "operator": "equals",
                     "compare_value": ""
-                },
-                {
-                    "variable_name": "loaderHtml",
-                    "operator": "contains",
-                    "compare_value": "display: none"
                 }
             ],
-            "logical_operator": "or",
-            "true_next_id": "d06b2c57-914c-4911-b485-d8b495fbe660",
-            "false_next_id": "7f2a3c91-0c8d-4d5f-9c2d-0b9e2a6c3f7d"
+            "logical_operator": "and",
+            "true_next_id": "3dde630e-eab6-478d-b6e3-f20431b3570c",
+            "false_next_id": "fec74fa6-445e-434c-a3ce-86002c03375f"
         },
         {
-            "id": "7f2a3c91-0c8d-4d5f-9c2d-0b9e2a6c3f7d",
+            "id": "fec74fa6-445e-434c-a3ce-86002c03375f",
+            "action": "click",
+            "name": "Rejeitar cookies (OneTrust)",
+            "selector": "#onetrust-reject-all-handler",
+            "next_id": "2d464b95-7752-4708-8492-f70267d8094e"
+        },
+        {
+            "id": "2d464b95-7752-4708-8492-f70267d8094e",
             "action": "waitForTimeout",
-            "name": "Aguardar 1s e revalidar loader",
-            "value": "100",
-            "next_id": "3a8a3b2d-2b3c-4af2-9f4b-9f487b9c1f2b"
+            "name": "Aguardar 800ms após rejeitar cookies",
+            "value": "800",
+            "next_id": "936212b2-58f7-4e55-9ba2-a3023e6bc6f6"
+        },
+        {
+            "id": "936212b2-58f7-4e55-9ba2-a3023e6bc6f6",
+            "action": "setVariable",
+            "name": "Revalidar banner OneTrust (sumiu?)",
+            "variable_name": "oneTrustBannerAfter",
+            "selector": "#onetrust-banner-sdk",
+            "next_id": "98593e37-5278-4839-b88c-5464c7db8d8d"
+        },
+        {
+            "id": "98593e37-5278-4839-b88c-5464c7db8d8d",
+            "action": "condition",
+            "name": "Banner OneTrust já fechou?",
+            "conditions": [
+                {
+                    "variable_name": "oneTrustBannerAfter",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "3dde630e-eab6-478d-b6e3-f20431b3570c",
+            "false_next_id": "2d464b95-7752-4708-8492-f70267d8094e"
+        },
+        {
+            "id": "3dde630e-eab6-478d-b6e3-f20431b3570c",
+            "action": "waitForSelector",
+            "name": "Aguardar campo Usuário",
+            "selector": "#acesso",
+            "next_id": "eb29e2b2-e9a2-4da8-9716-b75994513f81"
+        },
+        {
+            "id": "eb29e2b2-e9a2-4da8-9716-b75994513f81",
+            "action": "waitForSelector",
+            "name": "Aguardar campo Senha",
+            "selector": "#senha",
+            "next_id": "35cc20b9-5b2a-47bd-98b6-332e76e22ade"
+        },
+        {
+            "id": "35cc20b9-5b2a-47bd-98b6-332e76e22ade",
+            "action": "type",
+            "name": "Preencher Usuário",
+            "selector": "#acesso",
+            "value": "{{usuario}}",
+            "next_id": "e748016b-a40f-4bc3-9028-54ef976e1caf"
+        },
+        {
+            "id": "e748016b-a40f-4bc3-9028-54ef976e1caf",
+            "action": "type",
+            "name": "Preencher Senha",
+            "selector": "#senha",
+            "value": "{{senha}}",
+            "next_id": "cb9f107b-5df6-4717-9217-7062b56fe06a"
+        },
+        {
+            "id": "cb9f107b-5df6-4717-9217-7062b56fe06a",
+            "action": "waitForSelector",
+            "name": "Aguardar reCAPTCHA",
+            "selector": "#divRecaptcha .g-recaptcha",
+            "next_id": "4a7feb3a-7562-49a8-9818-3a6812b669cd"
+        },
+        {
+            "id": "4a7feb3a-7562-49a8-9818-3a6812b669cd",
+            "action": "handleRecaptcha",
+            "name": "Resolver reCAPTCHA v2",
+            "selector": "#divRecaptcha .g-recaptcha",
+            "next_id": "ee2c459c-aa33-4f32-8e11-8ef498fe405e"
+        },
+        {
+            "id": "ee2c459c-aa33-4f32-8e11-8ef498fe405e",
+            "action": "click",
+            "name": "Clicar em Entrar",
+            "selector": "#submitForm",
+            "next_id": "324c4e8c-6018-416d-81be-1ab4ec9022c0"
+        },
+        {
+            "id": "324c4e8c-6018-416d-81be-1ab4ec9022c0",
+            "action": "waitForTimeout",
+            "name": "Aguardar pós-submit (2.5s)",
+            "value": "2500",
+            "next_id": "974e0b1c-5039-475d-b758-d7d03a23157d"
+        },
+        {
+            "id": "974e0b1c-5039-475d-b758-d7d03a23157d",
+            "action": "setVariable",
+            "name": "Capturar alerta geral (se existir)",
+            "variable_name": "alertaLogin",
+            "selector": "#divAlertasGerais",
+            "next_id": "89af7cff-ce7e-42d1-b895-0f0fd023de02"
+        },
+        {
+            "id": "89af7cff-ce7e-42d1-b895-0f0fd023de02",
+            "action": "condition",
+            "name": "Login sem alerta? (#divAlertasGerais vazio/inexistente)",
+            "conditions": [
+                {
+                    "variable_name": "alertaLogin",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "f14885d1-5186-44d4-aa4f-6431dbdee7ad",
+            "false_next_id": "c83530b6-8375-4791-8263-369d2afa93b9"
+        },
+        {
+            "id": "c83530b6-8375-4791-8263-369d2afa93b9",
+            "action": "log",
+            "type": "error",
+            "value": "Falha no login (alerta detectado): {{alertaLogin}}",
+            "next_id": "N/A"
+        },
+        {
+            "id": "f14885d1-5186-44d4-aa4f-6431dbdee7ad",
+            "action": "waitForSelector",
+            "name": "Aguardar dropdown de cliente (select#ddCliente)",
+            "selector": "#ddCliente",
+            "next_id": "5a5f1f32-3a72-4c12-a4b3-793f8edec2ba"
+        },
+        {
+            "id": "5a5f1f32-3a72-4c12-a4b3-793f8edec2ba",
+            "action": "setVariable",
+            "name": "Verificar se o CNPJ existe no dropdown de cliente",
+            "variable_name": "clienteDropdownOption",
+            "selector": "#ddCliente",
+            "variable_property": "textContent",
+            "next_id": "a5c6e1e4-6a88-4efc-b40b-65f17bd9478b"
+        },
+        {
+            "id": "a5c6e1e4-6a88-4efc-b40b-65f17bd9478b",
+            "action": "condition",
+            "name": "Cliente/CNPJ encontrado no dropdown?",
+            "conditions": [
+                {
+                    "variable_name": "clienteDropdownOption",
+                    "operator": "contains",
+                    "compare_value": "{{ _.cnpj_formatado }}"
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "3dc37710-7fe5-4789-9b00-fca7d3e063a0",
+            "false_next_id": "6b9f4a0d-0a58-45f3-8d3b-bd27e75a8a31"
+        },
+        {
+            "id": "6b9f4a0d-0a58-45f3-8d3b-bd27e75a8a31",
+            "action": "log",
+            "type": "error",
+            "value": "ERRO: Cliente/CNPJ {{cnpj_formatado}} não encontrado no dropdown de seleção da CEMIG. Screenshot e PDF gerados.",
+            "next_id": "9df3bfb1-4dfb-4d18-a72d-6656ee15a7ec"
+        },
+        {
+            "id": "9df3bfb1-4dfb-4d18-a72d-6656ee15a7ec",
+            "action": "pdf",
+            "value": "/tmp/energia_cemig/{{cnpj}}_{{unidade_consumidora}}_cliente_nao_encontrado",
+            "next_id": "N/A"
+        },
+        {
+            "id": "3dc37710-7fe5-4789-9b00-fca7d3e063a0",
+            "action": "selectOption",
+            "name": "Selecionar CNPJ no dropdown (selectOption por LABEL)",
+            "selector": "#ddCliente",
+            "next_id": "892b4c58-111d-446e-a13a-f0cf2fab41dc",
+            "selection_mode": "label",
+            "selection_value": "{{cnpj_formatado}}"
+        },
+        {
+            "id": "892b4c58-111d-446e-a13a-f0cf2fab41dc",
+            "action": "waitForTimeout",
+            "name": "Aguardar 600ms após selecionar CNPJ (dispara AJAX)",
+            "value": "600",
+            "next_id": "d06b2c57-914c-4911-b485-d8b495fbe660"
         },
         {
             "id": "d06b2c57-914c-4911-b485-d8b495fbe660",
             "action": "setVariable",
-            "name": "Checar se banner de cookies (OneTrust) existe",
-            "variable_name": "cookieBanner",
-            "selector": "#onetrust-banner-sdk",
-            "next_id": "c8ffacb8-40ea-4a7d-9f6c-40c6c3eaa8f0"
+            "name": "Checar backdrop de loading (.modal-backdrop.fade.in)",
+            "variable_name": "loadingBackdrop",
+            "selector": ".modal-backdrop.fade.in",
+            "next_id": "88ee8979-b854-4276-9467-30bd7cd2f5a4"
         },
         {
-            "id": "c8ffacb8-40ea-4a7d-9f6c-40c6c3eaa8f0",
+            "id": "88ee8979-b854-4276-9467-30bd7cd2f5a4",
             "action": "condition",
-            "name": "Banner de cookies apareceu?",
+            "name": "Loading finalizou? (backdrop sumiu)",
             "conditions": [
                 {
-                    "variable_name": "cookieBanner",
-                    "operator": "not_equals",
+                    "variable_name": "loadingBackdrop",
+                    "operator": "equals",
                     "compare_value": ""
                 }
             ],
             "logical_operator": "and",
-            "true_next_id": "a00b1dc5-cd60-4b2a-8b58-22a3424a9d93",
-            "false_next_id": "bd63a334-bb0d-4e43-8b94-9750d5f93cf7"
+            "true_next_id": "b288b4fa-6912-42ab-b5f0-2ecf0b1f2e26",
+            "false_next_id": "8dd46999-eb52-41d3-9c03-e339d569a735"
         },
         {
-            "id": "a00b1dc5-cd60-4b2a-8b58-22a3424a9d93",
-            "action": "click",
-            "name": "Rejeitar todos os cookies",
-            "selector": "#onetrust-reject-all-handler",
-            "next_id": "0f1124e0-9f5d-4a0c-b6d4-6ff2b2b0d3c5"
-        },
-        {
-            "id": "0f1124e0-9f5d-4a0c-b6d4-6ff2b2b0d3c5",
+            "id": "8dd46999-eb52-41d3-9c03-e339d569a735",
             "action": "waitForTimeout",
-            "name": "Aguardar 800ms após rejeitar cookies",
+            "name": "Aguardar 800ms e revalidar loading",
             "value": "800",
-            "next_id": "bd63a334-bb0d-4e43-8b94-9750d5f93cf7"
+            "next_id": "d06b2c57-914c-4911-b485-d8b495fbe660"
         },
         {
-            "id": "bd63a334-bb0d-4e43-8b94-9750d5f93cf7",
+            "id": "b288b4fa-6912-42ab-b5f0-2ecf0b1f2e26",
+            "action": "log",
+            "type": "info",
+            "value": "CNPJ selecionado ({{cnpj_formatado}}) e loading finalizado.",
+            "next_id": "01d54158-54b6-45d2-948f-d788cf7371ff"
+        },
+        {
+            "id": "01d54158-54b6-45d2-948f-d788cf7371ff",
             "action": "waitForSelector",
-            "name": "Aguardar tela de seleção de perfil",
-            "selector": "#edit-profiles",
-            "next_id": "0a0e5b88-98aa-47a8-9d64-cb1df3de1a7a"
+            "name": "Aguardar campo Unidade Consumidora/Instalação (input#limparInst)",
+            "selector": "#limparInst",
+            "next_id": "222210b9-6f23-4d21-aa01-64b8d227b471"
         },
         {
-            "id": "0a0e5b88-98aa-47a8-9d64-cb1df3de1a7a",
-            "action": "click",
-            "name": "Clicar em Entrar do perfil Baixa tensão (após cookies)",
-            "selector": "#edit-field-102fc749-3b8d-4a09-b754-4234493f89c3 #edit-button",
-            "next_id": "fbb7d3dd-8bd8-4cd7-9c44-46b6ebd4b0d1"
-        },
-        {
-            "id": "fbb7d3dd-8bd8-4cd7-9c44-46b6ebd4b0d1",
-            "action": "click",
-            "name": "Abrir dropdown do TITULAR (select2)",
-            "selector": ".js-form-item-parceiro-negocio .select2-selection--single",
-            "click_mode": "auto",
-            "next_id": "a2c7db5c-1499-48c2-9d05-0cc1f145d9a4"
-        },
-        {
-            "id": "a2c7db5c-1499-48c2-9d05-0cc1f145d9a4",
-            "action": "waitForSelector",
-            "name": "Aguardar lista de opções do select2 aparecer",
-            "selector": ".select2-container--open .select2-results__options",
-            "next_id": "47d16d58-ff91-4fc6-93c8-5b1d65f8c70a"
-        },
-        {
-            "id": "47d16d58-ff91-4fc6-93c8-5b1d65f8c70a",
-            "action": "setVariable",
-            "name": "Checar se está 'Buscando…' (loading do select2)",
-            "variable_name": "selectLoading",
-            "selector": "li.select2-results__option.loading-results",
-            "next_id": "0a3e3e7e-fc75-4e7d-ae44-e4b71d2b0c6f"
-        },
-        {
-            "id": "0a3e3e7e-fc75-4e7d-ae44-e4b71d2b0c6f",
-            "action": "condition",
-            "name": "Ainda está buscando?",
-            "conditions": [
-                {
-                    "variable_name": "selectLoading",
-                    "operator": "not_equals",
-                    "compare_value": ""
-                }
-            ],
-            "logical_operator": "and",
-            "true_next_id": "c3f4f2bd-2d19-4f93-9bde-24a8b6a8a70f",
-            "false_next_id": "1b3ecf86-9f5c-4d7b-8d14-8a14a6d9f3ac"
-        },
-        {
-            "id": "c3f4f2bd-2d19-4f93-9bde-24a8b6a8a70f",
-            "action": "waitForTimeout",
-            "name": "Aguardar 600ms e revalidar 'Buscando…'",
-            "value": "600",
-            "next_id": "47d16d58-ff91-4fc6-93c8-5b1d65f8c70a"
-        },
-        {
-            "id": "1b3ecf86-9f5c-4d7b-8d14-8a14a6d9f3ac",
-            "action": "waitForSelector",
-            "name": "Aguardar ao menos 1 opção carregada (sem loading)",
-            "selector": ".select2-container--open .select2-results__options li.select2-results__option:not(.loading-results)",
-            "next_id": "e7b1f07d-e3f8-45a6-a15c-9c8b580d1a6a"
-        },
-        {
-            "id": "e7b1f07d-e3f8-45a6-a15c-9c8b580d1a6a",
-            "action": "click",
-            "name": "Selecionar a PRIMEIRA opção do TITULAR",
-            "selector": ".select2-container--open .select2-results__options li.select2-results__option:not(.loading-results)",
-            "next_id": "d0b4021c-93d2-4f9e-8e44-9a6d1d5ed1df"
-        },
-        {
-            "id": "d0b4021c-93d2-4f9e-8e44-9a6d1d5ed1df",
-            "action": "waitForTimeout",
-            "name": "Aguardar 600ms após selecionar titular",
-            "value": "600",
-            "next_id": "a6b64228-0fd7-4f86-b5af-8e3f0e49b1c7"
-        },
-        {
-            "id": "a6b64228-0fd7-4f86-b5af-8e3f0e49b1c7",
-            "action": "waitForSelector",
-            "name": "Aguardar botão Filtros",
-            "selector": "a[data-open-div='#sidebar-filtro-instalacoes']",
-            "next_id": "5b11d12c-14f8-48c2-9c77-65b6f74d8a1d"
-        },
-        {
-            "id": "5b11d12c-14f8-48c2-9c77-65b6f74d8a1d",
-            "action": "click",
-            "name": "Clicar em Filtros",
-            "selector": "a[data-open-div='#sidebar-filtro-instalacoes']",
-            "next_id": "6a4f3c3e-1b2b-4a63-8d3a-8c8ce08c3f2d"
-        },
-        {
-            "id": "6a4f3c3e-1b2b-4a63-8d3a-8c8ce08c3f2d",
-            "action": "waitForSelector",
-            "name": "Aguardar campo 'Número da instalação' dentro do painel de filtros",
-            "selector": "input[data-drupal-selector='edit-filtro-num-instalacao']",
-            "next_id": "c1e6f7a0-6a7f-4ed3-9d70-7f5f42b6b91c"
-        },
-        {
-            "id": "c1e6f7a0-6a7f-4ed3-9d70-7f5f42b6b91c",
+            "id": "222210b9-6f23-4d21-aa01-64b8d227b471",
             "action": "type",
-            "name": "Preencher 'Número da instalação' com {{indice}}",
-            "selector": "input[data-drupal-selector='edit-filtro-num-instalacao']",
-            "value": "{{indice}}",
-            "next_id": "0b69a6b7-3f6e-4f8e-baa7-3f89a1e0b1e7"
+            "name": "Informar Unidade Consumidora/Instalação",
+            "selector": "#limparInst",
+            "value": "{{unidade_consumidora}}",
+            "next_id": "9675b45e-97f6-4c33-928f-f3f965dda0e0"
         },
         {
-            "id": "0b69a6b7-3f6e-4f8e-baa7-3f89a1e0b1e7",
+            "id": "9675b45e-97f6-4c33-928f-f3f965dda0e0",
             "action": "click",
-            "name": "Clicar em 'Pesquisar' nos filtros",
-            "selector": "input[data-drupal-selector='edit-filtro-button']",
-            "next_id": "8d8a4c6c-4d67-4f59-9c64-9c0d8cc553f1"
+            "name": "Pesquisar instalação (button#pesquisaInstalacaoTop)",
+            "selector": "#pesquisaInstalacaoTop",
+            "next_id": "d227417c-b56e-44ac-a355-04bf04189f65"
         },
         {
-            "id": "8d8a4c6c-4d67-4f59-9c64-9c0d8cc553f1",
+            "id": "d227417c-b56e-44ac-a355-04bf04189f65",
             "action": "waitForTimeout",
-            "name": "Aguardar 1.5s (loading após pesquisar instalação)",
-            "value": "1500",
-            "next_id": "f2d3e1a4-30c7-4f29-8cb8-8b4c8a41d2d6"
+            "name": "Aguardar 600ms após pesquisar instalação",
+            "value": "600",
+            "next_id": "48fbe92d-7539-41e2-9cee-affe39c2196f"
         },
         {
-            "id": "f2d3e1a4-30c7-4f29-8cb8-8b4c8a41d2d6",
-            "action": "waitForSelector",
-            "name": "Aguardar resultado da instalação (label instalacao-{{indice}})",
-            "selector": "label[for='instalacao-{{indice}}']",
-            "next_id": "f0e0d3a9-5d4a-4e2e-8c4e-09b1e3b6f4a1"
-        },
-        {
-            "id": "f0e0d3a9-5d4a-4e2e-8c4e-09b1e3b6f4a1",
-            "action": "click",
-            "name": "Selecionar a instalação encontrada ({{indice}})",
-            "selector": "label[for='instalacao-{{indice}}']",
-            "click_mode": "auto",
-            "next_id": "3c1f5d1f-1c0d-4c46-a5d2-2fd1c2f3b1a9"
-        },
-        {
-            "id": "3c1f5d1f-1c0d-4c46-a5d2-2fd1c2f3b1a9",
-            "action": "waitForSelector",
-            "name": "Aguardar botão 'Avançar'",
-            "selector": "input[data-drupal-selector='edit-avancar']",
-            "next_id": "5bb8a1a2-6e1d-4a4f-9b9a-2d14b0c8c9f7"
-        },
-        {
-            "id": "5bb8a1a2-6e1d-4a4f-9b9a-2d14b0c8c9f7",
-            "action": "click",
-            "name": "Clicar em 'Avançar'",
-            "selector": "input[data-drupal-selector='edit-avancar']",
-            "click_mode": "auto",
-            "next_id": "a2adf9c8-1c4d-46b1-bbd1-8dca5db1d3e2"
-        },
-        {
-            "id": "a2adf9c8-1c4d-46b1-bbd1-8dca5db1d3e2",
-            "action": "waitForTimeout",
-            "name": "Aguardar 2s após avançar",
-            "value": "2000",
-            "next_id": "6e4ec1a9-7b65-400c-bab5-b2885c405dd1"
-        },
-        {
-            "id": "6e4ec1a9-7b65-400c-bab5-b2885c405dd1",
-            "action": "waitForSelector",
-            "name": "Aguardar card 'Débito e segunda via'",
-            "selector": "#servicos-em-destaque a[title='Débito e segunda via']",
-            "next_id": "d4ab3c48-ecc4-4c9b-ae6c-65c5f56a4fdb"
-        },
-        {
-            "id": "d4ab3c48-ecc4-4c9b-ae6c-65c5f56a4fdb",
-            "action": "click",
-            "name": "Clicar em 'Débito e segunda via'",
-            "selector": "#servicos-em-destaque a[title='Débito e segunda via']",
-            "click_mode": "auto",
-            "next_id": "8ba3c1e0-4125-4450-966b-9b2412b784a5"
-        },
-        {
-            "id": "8ba3c1e0-4125-4450-966b-9b2412b784a5",
-            "action": "waitForTimeout",
-            "name": "Aguardar 10s após abrir 'Débito e segunda via'",
-            "value": "10000",
-            "next_id": "d438c569-6d9a-4d6d-932d-30da7066f81d"
-        },
-        {
-            "id": "d438c569-6d9a-4d6d-932d-30da7066f81d",
+            "id": "48fbe92d-7539-41e2-9cee-affe39c2196f",
             "action": "setVariable",
-            "name": "Checar se banner de cookies (OneTrust) apareceu (página Débito/2ª via)",
-            "variable_name": "cookieBanner2",
-            "selector": "#onetrust-banner-sdk",
-            "next_id": "4da0bb94-7997-4a8c-b4e4-5306903a87d3"
+            "name": "Checar loading após pesquisa instalação (.modal-backdrop.fade.in)",
+            "variable_name": "loadingBackdropInst",
+            "selector": ".modal-backdrop.fade.in",
+            "next_id": "24aea496-26a6-47b1-819f-f3e8c72f8c6b"
         },
         {
-            "id": "4da0bb94-7997-4a8c-b4e4-5306903a87d3",
+            "id": "24aea496-26a6-47b1-819f-f3e8c72f8c6b",
             "action": "condition",
-            "name": "Banner de cookies (2) apareceu?",
+            "name": "Loading da pesquisa finalizou? (backdrop sumiu)",
             "conditions": [
                 {
-                    "variable_name": "cookieBanner2",
-                    "operator": "not_equals",
+                    "variable_name": "loadingBackdropInst",
+                    "operator": "equals",
                     "compare_value": ""
                 }
             ],
             "logical_operator": "and",
-            "true_next_id": "3da58235-f684-47bd-b88d-237d28d8c423",
-            "false_next_id": "00f4b111-5ef3-4bbd-8c17-bf640ea5d645"
+            "true_next_id": "cd81b029-2ac3-41e2-bfb6-a2e5b33ed997",
+            "false_next_id": "53e3168b-c7a3-4357-b299-07bc3ad9edf7"
         },
         {
-            "id": "3da58235-f684-47bd-b88d-237d28d8c423",
-            "action": "click",
-            "name": "Rejeitar todos os cookies (2)",
-            "selector": "#onetrust-reject-all-handler",
-            "next_id": "a57c20e5-c05f-403f-93b5-a1dc4e3a9d90"
-        },
-        {
-            "id": "a57c20e5-c05f-403f-93b5-a1dc4e3a9d90",
+            "id": "53e3168b-c7a3-4357-b299-07bc3ad9edf7",
             "action": "waitForTimeout",
-            "name": "Aguardar 800ms após rejeitar cookies (2)",
+            "name": "Aguardar 800ms e revalidar loading da pesquisa",
             "value": "800",
-            "next_id": "00f4b111-5ef3-4bbd-8c17-bf640ea5d645"
+            "next_id": "48fbe92d-7539-41e2-9cee-affe39c2196f"
         },
         {
-            "id": "00f4b111-5ef3-4bbd-8c17-bf640ea5d645",
+            "id": "cd81b029-2ac3-41e2-bfb6-a2e5b33ed997",
             "action": "setVariable",
-            "name": "Checar se modal (PIX) apareceu",
-            "variable_name": "pixModalCloseBtn",
-            "selector": "div[uib-modal-window] button.close[data-dismiss='modal']",
-            "next_id": "1351b3d6-a82f-48d6-8b58-773f24c2b8e5"
+            "name": "Capturar alerta de UC não encontrada (spnAlertasGerais)",
+            "variable_name": "alerta_uc_msg",
+            "selector": "#divAlertasGerais[style*='display: block'] #spnAlertasGerais",
+            "next_id": "a1fc50b3-1489-43b9-8dd0-924a08089fe2"
         },
         {
-            "id": "1351b3d6-a82f-48d6-8b58-773f24c2b8e5",
+            "id": "a1fc50b3-1489-43b9-8dd0-924a08089fe2",
             "action": "condition",
-            "name": "Modal (PIX) apareceu?",
+            "name": "Unidade Consumidora não encontrada?",
             "conditions": [
                 {
-                    "variable_name": "pixModalCloseBtn",
-                    "operator": "not_equals",
-                    "compare_value": ""
+                    "variable_name": "alerta_uc_msg",
+                    "operator": "equals",
+                    "compare_value": "Unidade Consumidora não encontrada."
                 }
             ],
             "logical_operator": "and",
-            "true_next_id": "6db823f6-307d-416c-b999-d6e9a6decb97",
-            "false_next_id": "15cdc910-5a63-4f60-836c-014ff7045636"
+            "true_next_id": "d9cd3308-5928-4571-be64-a21ffca25e06",
+            "false_next_id": "f846b22f-0b36-4cf7-86e3-78287dbff59f"
         },
         {
-            "id": "6db823f6-307d-416c-b999-d6e9a6decb97",
-            "action": "click",
-            "name": "Fechar modal (PIX)",
-            "selector": "div[uib-modal-window] button.close[data-dismiss='modal']",
-            "click_mode": "auto",
-            "next_id": "7b06f2b5-ffd2-4d5d-8adb-d45d5a2ef5a0"
+            "id": "d9cd3308-5928-4571-be64-a21ffca25e06",
+            "action": "log",
+            "type": "error",
+            "value": "ERRO: Unidade Consumidora não encontrada para o CNPJ selecionado. Encerrando o fluxo.",
+            "next_id": "d9cd3308-5928-4571-be64-a21ffca25e07"
         },
         {
-            "id": "7b06f2b5-ffd2-4d5d-8adb-d45d5a2ef5a0",
-            "action": "waitForTimeout",
-            "name": "Aguardar 500ms após fechar modal (PIX)",
-            "value": "500",
-            "next_id": "b8c8e2c7-2d8a-4c60-9c2a-9b5f3a67c1d1"
-        },
-        {
-            "id": "b8c8e2c7-2d8a-4c60-9c2a-9b5f3a67c1d1",
-            "action": "setVariable",
-            "name": "Checar mensagem 'Você não possui débitos em aberto!'",
-            "variable_name": "semDebitosMsgHtml",
-            "selector": "span[translate='@APP-HISTORICO-CONTAS-SEM-CONTAS-EM-ABERTO']",
-            "variable_property": "outerHTML",
-            "timeout": 800,
-            "next_id": "c1c6e9c2-1f7d-4a3c-9e41-91e0f9cfe3e2"
-        },
-        {
-            "id": "c1c6e9c2-1f7d-4a3c-9e41-91e0f9cfe3e2",
-            "action": "condition",
-            "name": "Não possui débitos em aberto?",
-            "conditions": [
-                {
-                    "variable_name": "semDebitosMsgHtml",
-                    "operator": "not_equals",
-                    "compare_value": ""
-                },
-                {
-                    "variable_name": "semDebitosMsgHtml",
-                    "operator": "not_contains",
-                    "compare_value": "display: none"
-                }
-            ],
-            "logical_operator": "and",
-            "true_next_id": "d3c4d7f1-6d64-4e2a-9f11-3b6a2b0f0a77",
-            "false_next_id": "15cdc910-5a63-4f60-836c-014ff7045636"
-        },
-        {
-            "id": "d3c4d7f1-6d64-4e2a-9f11-3b6a2b0f0a77",
-            "action": "waitForSelector",
-            "name": "Aguardar header 'Minhas contas pagas'",
-            "selector": "div.panel-heading[data-target='#minhasContasPagas']",
-            "next_id": "a9b2a6d4-7b47-4a5e-b4b2-1c3e6f2c8d14"
-        },
-        {
-            "id": "a9b2a6d4-7b47-4a5e-b4b2-1c3e6f2c8d14",
-            "action": "click",
-            "name": "Expandir 'Minhas contas pagas'",
-            "selector": "div.panel-heading[data-target='#minhasContasPagas']",
-            "click_mode": "auto",
-            "next_id": "f2bb2d9f-0b67-4f3f-8f78-1a9c9b5b7d2e"
-        },
-        {
-            "id": "f2bb2d9f-0b67-4f3f-8f78-1a9c9b5b7d2e",
-            "action": "waitForTimeout",
-            "name": "Aguardar 800ms após expandir contas pagas",
-            "value": "800",
-            "next_id": "1b8b9a9a-3d22-4e83-9c5c-5dcb4d4f7b44"
-        },
-        {
-            "id": "1b8b9a9a-3d22-4e83-9c5c-5dcb4d4f7b44",
+            "id": "d9cd3308-5928-4571-be64-a21ffca25e07",
             "action": "pdf",
-            "name": "Salvar página em PDF (sem débitos em aberto)",
-            "value": "/tmp/energia_cpfl/{{indice}}_nao_possui_debitos_em_aberto",
+            "value": "/tmp/energia_cemig/{{cnpj}}_{{unidade_consumidora}}_unidade_consumidora_nao_encontrada",
             "next_id": "N/A"
         },
         {
-            "id": "15cdc910-5a63-4f60-836c-014ff7045636",
+            "id": "f846b22f-0b36-4cf7-86e3-78287dbff59f",
             "action": "waitForSelector",
-            "name": "Aguardar tabela de débitos (1ª linha)",
-            "selector": "xpath=//table[contains(@class,'ng-table')]//tbody//tr[1]",
-            "next_id": "7756a518-85d2-4bc6-97bd-87b640397f93"
+            "name": "Aguardar card Segunda Via (div#divSegundaVia)",
+            "selector": "#divSegundaVia",
+            "next_id": "969c41fd-f1fc-4a52-b49e-31e6eccc5d71"
         },
         {
-            "id": "7756a518-85d2-4bc6-97bd-87b640397f93",
-            "action": "setVariable",
-            "name": "Capturar Mês Ref. (1ª linha)",
-            "variable_name": "mesReferenciaRaw",
-            "selector": "xpath=//table[contains(@class,'ng-table')]//tbody//tr[1]//td[@ng-bind='registro.MesReferencia']",
-            "next_id": "2f21c323-6896-465b-8a13-4980e0cd7184"
+            "id": "969c41fd-f1fc-4a52-b49e-31e6eccc5d71",
+            "action": "click",
+            "name": "Abrir serviço Segunda Via (clique no card)",
+            "selector": "#divSegundaVia",
+            "next_id": "f932b645-d8aa-435d-b8c8-b915b53e6f03"
         },
         {
-            "id": "2f21c323-6896-465b-8a13-4980e0cd7184",
+            "id": "f932b645-d8aa-435d-b8c8-b915b53e6f03",
+            "action": "waitForTimeout",
+            "name": "Aguardar 600ms após clicar no card",
+            "value": "600",
+            "next_id": "f9209009-4788-40b6-9b9f-1a1c6e911902"
+        },
+        {
+            "id": "f9209009-4788-40b6-9b9f-1a1c6e911902",
             "action": "setVariable",
-            "name": "Capturar Vencimento (1ª linha)",
+            "name": "Checar loading após abrir Segunda Via (.modal-backdrop.fade.in)",
+            "variable_name": "loadingBackdropSegundaVia",
+            "selector": ".modal-backdrop.fade.in",
+            "next_id": "7b1f6c5b-38d3-4199-9acd-fde7c3e958f5"
+        },
+        {
+            "id": "7b1f6c5b-38d3-4199-9acd-fde7c3e958f5",
+            "action": "condition",
+            "name": "Loading do serviço finalizou? (backdrop sumiu)",
+            "conditions": [
+                {
+                    "variable_name": "loadingBackdropSegundaVia",
+                    "operator": "equals",
+                    "compare_value": ""
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "8c9f8684-17ae-4847-91f9-03bd20fe0a29",
+            "false_next_id": "a2db8c29-5a13-4a5e-99fd-82c146b82472"
+        },
+        {
+            "id": "a2db8c29-5a13-4a5e-99fd-82c146b82472",
+            "action": "waitForTimeout",
+            "name": "Aguardar 800ms e revalidar loading do serviço",
+            "value": "800",
+            "next_id": "f9209009-4788-40b6-9b9f-1a1c6e911902"
+        },
+        {
+            "id": "8c9f8684-17ae-4847-91f9-03bd20fe0a29",
+            "action": "log",
+            "type": "info",
+            "value": "Instalação {{unidade_consumidora}} pesquisada e serviço 'Segunda Via e Parcelamento de Contas' aberto (loading finalizado).",
+            "next_id": "a55e2c34-b207-4374-b9b8-57f7c3db8db4"
+        },
+        {
+            "id": "a55e2c34-b207-4374-b9b8-57f7c3db8db4",
+            "action": "waitForSelector",
+            "name": "Aguardar tabela de débitos (tblGrid)",
+            "selector": "#tblGrid",
+            "next_id": "be658de8-03f5-4351-b6ca-8741d7df9abb"
+        },
+        {
+            "id": "be658de8-03f5-4351-b6ca-8741d7df9abb",
+            "action": "setVariable",
+            "name": "Ler mensagem do grid (Sem registros?) / ou primeira linha",
+            "variable_name": "segunda_via_grid_msg",
+            "selector": "xpath=//table[@id='tblGrid']//tbody//tr[1]//td[1]",
+            "next_id": "027fe303-834f-4a1d-a375-8b54fcb89ed4"
+        },
+        {
+            "id": "027fe303-834f-4a1d-a375-8b54fcb89ed4",
+            "action": "condition",
+            "name": "Sem registros para exibir?",
+            "conditions": [
+                {
+                    "variable_name": "segunda_via_grid_msg",
+                    "operator": "equals",
+                    "compare_value": "Sem registros para exibir"
+                }
+            ],
+            "logical_operator": "and",
+            "true_next_id": "02801395-1cb0-48ee-9f99-e84ba3ab4a62",
+            "false_next_id": "32e8abd9-660b-458b-9aad-d367910764d4"
+        },
+        {
+            "id": "02801395-1cb0-48ee-9f99-e84ba3ab4a62",
+            "action": "log",
+            "type": "info",
+            "name": "Finalizar: sem PDF disponível para baixar",
+            "value": "Chegou ao fim do fluxo de Segunda Via, mas o grid retornou 'Sem registros para exibir'. Nenhum arquivo para download.",
+            "next_id": "02801395-1cb0-48ee-9f99-e84ba3ab4a63"
+        },
+        {
+            "id": "02801395-1cb0-48ee-9f99-e84ba3ab4a63",
+            "action": "pdf",
+            "value": "/tmp/energia_cemig/{{cnpj}}_{{unidade_consumidora}}_fatura_nao_disponivel",
+            "next_id": "N/A"
+        },
+        {
+            "id": "a7b3c1d2-5b19-4c3e-8d46-6a8c2d8f7f21",
+            "action": "setVariable",
+            "name": "Capturar vencimento (1ª linha da tabela)",
             "variable_name": "vencimentoRaw",
-            "selector": "xpath=//table[contains(@class,'ng-table')]//tbody//tr[1]//td[contains(@ng-bind,'registro.Vencimento')]",
-            "next_id": "bc5bbf8a-7a95-4e1c-b24a-958e9a1849f1"
+            "selector": "xpath=//table[@id='tblGrid']//tbody//tr[1]//td[1]",
+            "next_id": "c2c7f0f6-1de0-4b68-93f5-1c0a7a88a9d3"
         },
         {
-            "id": "bc5bbf8a-7a95-4e1c-b24a-958e9a1849f1",
-            "action": "formatDate",
-            "name": "Formatar mês de referência a partir do vencimento (mmyyyy)",
-            "variable_name": "mesReferenciaFmt",
-            "value": "{{mesReferenciaRaw}}|mmyyyy",
-            "next_id": "b9e890b5-4a9d-42e5-bf36-61f2e9982114"
-        },
-        {
-            "id": "b9e890b5-4a9d-42e5-bf36-61f2e9982114",
+            "id": "c2c7f0f6-1de0-4b68-93f5-1c0a7a88a9d3",
             "action": "formatDate",
             "name": "Formatar vencimento (ddmmyyyy)",
             "variable_name": "vencimentoFmt",
             "value": "{{vencimentoRaw}}|ddmmyyyy",
-            "next_id": "5ce7841b-4ba2-4b1d-a302-723a2c4286c6"
+            "next_id": "f34570a0-12a4-4e6b-9ba6-b3d00224c7c3"
         },
         {
-            "id": "5ce7841b-4ba2-4b1d-a302-723a2c4286c6",
+            "id": "32e8abd9-660b-458b-9aad-d367910764d4",
+            "action": "setVariable",
+            "name": "Capturar vencimento (coluna Vencimento - 1ª linha)",
+            "variable_name": "vencimentoRaw",
+            "selector": "xpath=//table[@id='tblGrid']//tbody//tr[1]//td[1]",
+            "next_id": "e6046054-f20d-40eb-b533-962bcc8f4d2c"
+        },
+        {
+            "id": "e6046054-f20d-40eb-b533-962bcc8f4d2c",
+            "action": "formatDate",
+            "name": "Formatar mês de referência a partir do vencimento (mmyyyy)",
+            "variable_name": "mesReferenciaFmt",
+            "value": "{{vencimentoRaw}}|mmyyyy",
+            "next_id": "5acd9d75-3752-41f6-ae37-9bb3e821f77f"
+        },
+        {
+            "id": "5acd9d75-3752-41f6-ae37-9bb3e821f77f",
+            "action": "formatDate",
+            "name": "Formatar vencimento (ddmmyyyy)",
+            "variable_name": "vencimentoFmt",
+            "value": "{{vencimentoRaw}}|ddmmyyyy",
+            "next_id": "f34570a0-12a4-4e6b-9ba6-b3d00224c7c3"
+        },
+        {
+            "id": "f34570a0-12a4-4e6b-9ba6-b3d00224c7c3",
             "action": "waitForSelector",
-            "name": "Aguardar LABEL do checkbox da 1ª linha (input pode estar invisível)",
-            "selector": ".marcar{{indice}} + label",
-            "next_id": "2f8e1c3d-6a9b-4a1e-9f4d-1d2a7f9c8b0e"
+            "name": "Aguardar botão Baixar PDF",
+            "selector": ".btn-agv",
+            "next_id": "9295edb1-698a-4fc5-a698-8bdc6911fc9c"
         },
         {
-            "id": "2f8e1c3d-6a9b-4a1e-9f4d-1d2a7f9c8b0e",
-            "action": "click",
-            "name": "Marcar checkbox da 1ª conta (clicando no label)",
-            "selector": ".marcar{{indice}} + label",
-            "click_mode": "auto",
-            "next_id": "7c1b2a9d-8f44-4e5d-9b9a-0e1f2a3b4c5d"
-        },
-        {
-            "id": "7c1b2a9d-8f44-4e5d-9b9a-0e1f2a3b4c5d",
-            "action": "waitForSelector",
-            "name": "Aguardar link 'Salvar Conta(s)'",
-            "selector": "a[ng-click='vm.salvarContas(vm.tableDebitosAbertosParams, vm.instalacao.InstalacaoReal)']",
-            "next_id": "c9a2f1b3-6d7e-4b1c-8a7f-3b2c1d0e9f8a"
-        },
-        {
-            "id": "c9a2f1b3-6d7e-4b1c-8a7f-3b2c1d0e9f8a",
+            "id": "9295edb1-698a-4fc5-a698-8bdc6911fc9c",
             "action": "waitForDownload",
-            "name": "Preparar captura de download (Salvar Conta(s))",
-            "next_id": "d1e2f3a4-b5c6-4d7e-8f90-a1b2c3d4e5f6"
+            "name": "Preparar captura de download do PDF (Segunda Via)",
+            "next_id": "97430cf0-fb6b-40d2-80dd-882892f287b2"
         },
         {
-            "id": "d1e2f3a4-b5c6-4d7e-8f90-a1b2c3d4e5f6",
+            "id": "97430cf0-fb6b-40d2-80dd-882892f287b2",
             "action": "click",
-            "name": "Clicar em 'Salvar Conta(s)' (PDF)",
-            "selector": "a[ng-click='vm.salvarContas(vm.tableDebitosAbertosParams, vm.instalacao.InstalacaoReal)']",
-            "click_mode": "auto",
-            "next_id": "4e5f6a7b-8c9d-4e0f-9a1b-2c3d4e5f6a7b"
+            "name": "Clicar em Baixar PDF",
+            "selector": ".btn-agv",
+            "next_id": "6386dbac-7ee6-4b5d-a055-0660e2fdd65d"
         },
         {
-            "id": "4e5f6a7b-8c9d-4e0f-9a1b-2c3d4e5f6a7b",
+            "id": "6386dbac-7ee6-4b5d-a055-0660e2fdd65d",
             "action": "downloadPdf",
-            "name": "Salvar PDF baixado (Conta Completa / Salvar Conta(s))",
-            "value": "/tmp/energia_cpfl/{{indice}}_{{mesReferenciaFmt}}_{{vencimentoFmt}}",
+            "name": "Salvar PDF baixado (Segunda Via)",
+            "value": "/tmp/energia_cemig/{{cnpj}}_{{unidade_consumidora}}_{{mesReferenciaFmt}}_{{vencimentoFmt}}",
             "next_id": "N/A"
         }
     ]
